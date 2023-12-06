@@ -146,14 +146,18 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Button variant="text" sx={{ minWidth: 80, color: "#65D6AA" }} href="/signup">
-                Sign Up
-              </Button>
-              <Button variant="text" sx={{
-                minWidth: 65, color: "#65D6AA"
-              }} href="/login">
-                Login
-              </Button>
+              <Link to={"/signup"}>
+                <Button variant="text" sx={{ minWidth: 80, color: "#65D6AA" }} >
+                  Sign Up
+                </Button>
+              </Link>
+              <Link to={"/login"}>
+                <Button variant="text" sx={{
+                  minWidth: 65, color: "#65D6AA"
+                }} href="/login">
+                  Login
+                </Button>
+              </Link>
             </>
           )}
         </HorizontalStack>
