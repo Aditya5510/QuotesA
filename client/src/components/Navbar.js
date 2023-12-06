@@ -146,11 +146,11 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Button variant="text" sx={{ minWidth: 80 }} href="/signup">
+              <Button variant="text" sx={{ minWidth: 80, color: "#65D6AA" }} href="/signup">
                 Sign Up
               </Button>
               <Button variant="text" sx={{
-                minWidth: 65,
+                minWidth: 65, color: "#65D6AA"
               }} href="/login">
                 Login
               </Button>
