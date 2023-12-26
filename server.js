@@ -17,9 +17,8 @@ dotenv.config();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "https://quotes-a.vercel.app"],
-    creadentials: true,
-
+    origin: ["http://localhost:3000", "https://quotes-a.vercel.app", "*"],
+    credentials: true,
   },
 });
 
@@ -40,6 +39,13 @@ httpServer.listen(process.env.PORT || 4000, () => {
 
 app.use(express.json());
 app.use(cors());
+
+// Set the Access-Control-Allow-Origin header
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 app.use("/api/posts", posts);
 app.use("/api/users", users);
 app.use("/api/comments", comments);
